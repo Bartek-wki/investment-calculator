@@ -1,5 +1,7 @@
 import { useState } from "react"
 import InvestmentPanel from "./components/InvestmentPanel"
+import Results from "./components/Results"
+import { calculateInvestmentResults } from "./util/investment"
 
 const initialInvestmentValues = [
   {
@@ -22,10 +24,11 @@ const initialInvestmentValues = [
 
 function App() {
   const [investmentValues, setInvestmentValues] = useState(initialInvestmentValues)
-
+    
   return (
     <>
       <InvestmentPanel investmentValues={investmentValues} setInvestmentValues={setInvestmentValues} />
+      <Results investmentValues={investmentValues} />
     </>
   )
 }

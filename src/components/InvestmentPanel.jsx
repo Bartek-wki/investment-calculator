@@ -5,7 +5,7 @@ export default function InvestmentPanel({investmentValues, setInvestmentValues})
     const handleInvestmentValueChange = (index, newValue) => {
         setInvestmentValues(prevInvestmentValues => {
             const updatedinvestmentValues = [...prevInvestmentValues]
-            updatedinvestmentValues[index].value = newValue   
+            updatedinvestmentValues[index].value = +newValue   
             
             return updatedinvestmentValues
         })
