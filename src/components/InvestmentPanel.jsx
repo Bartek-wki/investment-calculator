@@ -1,23 +1,23 @@
 import UserInput from "./userInput"
 
-export default function InvestmentPanel({investmentValues, setInvestmentValues}) {
+export default function InvestmentPanel({investmentInputs, setInvestmentInputs}) {
     
     const handleInvestmentValueChange = (index, newValue) => {
-        setInvestmentValues(prevInvestmentValues => {
-            const updatedinvestmentValues = [...prevInvestmentValues]
-            updatedinvestmentValues[index].value = +newValue   
+        setInvestmentInputs(prevInvestmentInputs => {
+            const updatedinvestmentInputs = [...prevInvestmentInputs]
+            updatedinvestmentInputs[index].value = +newValue   
             
-            return updatedinvestmentValues
+            return updatedinvestmentInputs
         })
     }
 
     return (
         <section id="user-input" className="input-group">
-            {investmentValues.map((investmentValue, index) => (
+            {investmentInputs.map((investmentInput, index) => (
                 <UserInput 
                     key={index} 
-                    label={investmentValue.label} 
-                    value={investmentValue.value} 
+                    label={investmentInput.label} 
+                    value={investmentInput.value} 
                     index={index} 
                     onChange={handleInvestmentValueChange}
                 />

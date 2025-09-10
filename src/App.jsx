@@ -3,7 +3,7 @@ import InvestmentPanel from "./components/InvestmentPanel"
 import Results from "./components/Results"
 import { calculateInvestmentResults } from "./util/investment"
 
-const initialInvestmentValues = [
+const initialInvestmentInputs = [
   {
     label: "initial investment",
     value: "",
@@ -23,12 +23,12 @@ const initialInvestmentValues = [
 ]
 
 function App() {
-  const [investmentValues, setInvestmentValues] = useState(initialInvestmentValues)
+  const [investmentInputs, setInvestmentInputs] = useState(initialInvestmentInputs)
     
   return (
     <>
-      <InvestmentPanel investmentValues={investmentValues} setInvestmentValues={setInvestmentValues} />
-      <Results investmentValues={investmentValues} />
+      <InvestmentPanel investmentInputs={investmentInputs} setInvestmentInputs={setInvestmentInputs} />
+      <Results investmentInputs={investmentInputs} />
     </>
   )
 }
